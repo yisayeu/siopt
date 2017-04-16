@@ -8,7 +8,7 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @package BlogBundle
+ * @package Blog
  */
 class PostController extends FOSRestController
 {

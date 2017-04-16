@@ -2,6 +2,7 @@ define([
     'backbone',
     'src/view/app'
 ], function (Backbone, AppView) {
+
     var Router = Backbone.Router.extend({
         routes: {
             '': 'showList',

@@ -4,6 +4,9 @@ define([
     'jquery',
 ], function (Backbone, _, $) {
 
+    /**
+     * View for posts list item.
+     */
     var ListItemView = Backbone.View.extend({
         template: _.template($('#list-item-template').html()),
 

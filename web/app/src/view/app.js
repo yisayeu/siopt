@@ -8,11 +8,14 @@ define([
     'src/model/post'
 ], function (Backbone, _, $, ListView, PostView, PostsCollection, PostModel) {
 
-    var App = Backbone.View.extend({
+    /**
+     * Main application view.
+     */
+    var AppView = Backbone.View.extend({
         el: $("#app"),
 
         /**
-         * Renders posts list.
+         * Renders a list of posts.
          */
         renderList: function () {
             var postsCollection = new PostsCollection();
@@ -26,6 +29,7 @@ define([
          * Renders a single post.
          */
         renderPost: function (id) {
+            // TODO: If the post is loaded via collection, it should not be reloaded.
             var postModel = new PostModel({'id': id});
             var postView = new PostView({model: postModel});
 
@@ -34,5 +38,5 @@ define([
         }
     });
 
-    return App;
+    return AppView;
 });

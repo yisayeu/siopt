@@ -6,8 +6,14 @@ use Blog\BackendBundle\Entity\Post;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
+/**
+ * @package Blog
+ */
 class LoadUserData implements FixtureInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function load(ObjectManager $manager)
     {
         $post1 = new Post();

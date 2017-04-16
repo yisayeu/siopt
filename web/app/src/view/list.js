@@ -5,10 +5,14 @@ define([
     'src/view/listItem'
 ], function (Backbone, _, $, ListItemView) {
 
+    /**
+     * View for list of posts.
+     */
     var ListView = Backbone.View.extend({
         template: _.template($('#list-template').html()),
 
         initialize: function() {
+            // When the collection is reloaded, re-render this view.
             this.collection.bind('sync', _.bind(this.render, this));
         },
 
