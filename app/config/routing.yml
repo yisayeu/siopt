@@ -1,3 +1,8 @@
+blog_frontend:
+    resource: "@BlogFrontendBundle/Controller/"
+    type:     annotation
+    prefix:   /blog/frontend
+
 blog:
     resource: "@BlogBundle/Resources/config/routing.yml"
     prefix: /blog

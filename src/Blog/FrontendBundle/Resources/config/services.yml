@@ -1,0 +1,4 @@
+services:
+#    blog_frontend.example:
+#        class: Blog\FrontendBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
