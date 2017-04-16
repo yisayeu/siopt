@@ -1,16 +1,21 @@
 define([
     'backbone',
-    'src/collection/posts'
-], function (Backbone, Posts) {
-    'use strict';
-
+    'src/view/app'
+], function (Backbone, AppView) {
     var Router = Backbone.Router.extend({
         routes: {
-            '': 'listPosts'
+            '': 'showList',
+            'view/:id': 'showPost'
         },
 
-        listPosts: function () {
+        appView: new AppView(),
 
+        showList: function () {
+            this.appView.renderList();
+        },
+
+        showPost: function(id) {
+            this.appView.renderPost(id);
         }
     });
 

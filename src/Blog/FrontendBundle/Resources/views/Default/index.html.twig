@@ -1,7 +1,25 @@
 {% extends "BlogFrontendBundle::layout.html.twig" %}
 
 {% block body %}
+    <div id="app"></div>
 
+	<script type="text/template" id="list-template">
+    	<h2>Blog posts</h2>
+	</script>
+
+	<script type="text/template" id="list-item-template">
+    	<div>
+        	<a href="#view/<%= id %>"><%= title %></a>
+	    </div>
+	</script>
+
+	<script type="text/template" id="post-template">
+    	<div>
+        	<h2><%= title %></h2>
+	        <p><%= body %></p>
+    	    <a href="#">Back<a/>
+	    </div>
+	</script>
 {% endblock %}
 
 {% block javascripts %}

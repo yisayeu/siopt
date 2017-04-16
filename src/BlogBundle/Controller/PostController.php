@@ -36,6 +36,7 @@ class PostController extends FOSRestController
     public function getPostsAction()
     {
         // TODO: implement pagination.
+        // TODO: enable caching
 
         $posts = $this
             ->getDoctrine()

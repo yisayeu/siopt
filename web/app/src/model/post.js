@@ -1,10 +1,10 @@
 define([
     'backbone'
 ], function (Backbone) {
-    'use strict';
 
     var Post = Backbone.Model.extend({
-        idAttribute: 'id'
+        idAttribute: 'id',
+        urlRoot: '/blog/posts'
     });
 
     return Post;
