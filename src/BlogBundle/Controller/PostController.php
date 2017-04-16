@@ -2,8 +2,10 @@
 
 namespace BlogBundle\Controller;
 
+use BlogBundle\Entity\Post;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @package BlogBundle
@@ -11,14 +13,34 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 class PostController extends FOSRestController
 {
     /**
+     * Gets a post.
+     *
      * @ApiDoc
      *
-     * @param int $id
+     * @param Post $post
+     *
+     * @return Response
      */
-    public function getPostAction($id)
+    public function getPostAction(Post $post)
     {
-        $view = $this->view(['requestedId' => $id]);
+        return $this->handleView($this->view($post));
+    }
 
-        return $this->handleView($view);
+    /**
+     * Gets a list of posts. Newest first.
+     *
+     * @ApiDoc
+     *
+     * @return Response
+     */
+    public function getPostsAction()
+    {
+        // TODO: implement pagination.
+
+        $posts = $this
+            ->getDoctrine()
+            ->getRepository(Post::class)->findBy([], ['createdAt' => 'DESC'], 10);
+
+        return $this->handleView($this->view($posts));
     }
 }
