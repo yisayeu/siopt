@@ -31,7 +31,9 @@ gulp.task('copy', function () {
 gulp.task('rjs', function (cb) {
     var env = argv.env ? argv.env : 'dev',
         cmd = [
+            'php bin/console doctrine:schema:drop --force --quiet --env=' + env,
             'php bin/console doctrine:schema:create --env=' + env,
+            'php bin/console doctrine:fixtures:load --env=' + env,
             'php bin/console cache:clear --env=' + env,
             'php bin/console assets:install --env=' + env,
             'node r.js -o web/app/app.build.js'
