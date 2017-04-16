@@ -17,3 +17,8 @@
 .buildpath
 .project
 .settings/
+/bower_components/
+/node_modules/
+/web/app/dist/
+/web/app/vendor/
+/r.js
