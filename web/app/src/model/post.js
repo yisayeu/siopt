@@ -1,11 +1,12 @@
 define([
-    'backbone'
-], function (Backbone) {
+    'backbone',
+    'src/config'
+], function (Backbone, config) {
 
-    var Post = Backbone.Model.extend({
+    var PostModel = Backbone.Model.extend({
         idAttribute: 'id',
-        urlRoot: '/api/posts'
+        urlRoot: config.baseUrl + 'api/posts'
     });
 
-    return Post;
+    return PostModel;
 });

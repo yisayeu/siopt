@@ -1,12 +1,13 @@
 define([
     'backbone',
-    'src/model/post'
-], function (Backbone, Post) {
+    'src/model/post',
+    'src/config'
+], function (Backbone, PostModel, config) {
 
-    var Posts = Backbone.Collection.extend({
-        url: '/api/posts',
-        model: Post
+    var PostsCollection = Backbone.Collection.extend({
+        url: config.baseUrl + 'api/posts',
+        model: PostModel
     });
 
-    return Posts;
+    return PostsCollection;
 });

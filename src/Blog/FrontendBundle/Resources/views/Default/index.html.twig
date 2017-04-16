@@ -1,25 +1,27 @@
 {% extends "BlogFrontendBundle::layout.html.twig" %}
 
+{% set baseUrl = app.request.schemeAndHttpHost ~ app.request.baseUrl ~ '/' %}
+
 {% block body %}
     <div id="app"></div>
 
-	<script type="text/template" id="list-template">
-    	<h2>Blog posts</h2>
-	</script>
+    <script type="text/template" id="list-template">
+        <h2>Blog posts</h2>
+    </script>
 
-	<script type="text/template" id="list-item-template">
-    	<div>
-        	<a href="#view/<%= id %>"><%= title %></a>
-	    </div>
-	</script>
+    <script type="text/template" id="list-item-template">
+        <div>
+            <a href="{{ baseUrl }}#view/<%= id %>"><%= title %></a>
+        </div>
+    </script>
 
-	<script type="text/template" id="post-template">
-    	<div>
-        	<h2><%= title %></h2>
-	        <p><%= body %></p>
-    	    <a href="#">Back<a/>
-	    </div>
-	</script>
+    <script type="text/template" id="post-template">
+        <div>
+            <h2><%= title %></h2>
+            <p><%= body %></p>
+            <a href="{{ baseUrl }}#">Back<a/>
+        </div>
+    </script>
 {% endblock %}
 
 {% block javascripts %}
@@ -29,4 +31,15 @@
         <script>var require = {urlArgs: 'bust=' + (new Date()).getTime()};</script>
         <script data-main="app/main" src="{{ asset('app/vendor/requirejs/require.js') }}"></script>
     {% endif %}
+
+    <script>
+        requirejs.config({
+            baseUrl: '{{ baseUrl }}app/',
+            config:  {
+                'src/config': {
+                    baseUrl: '{{ baseUrl }}'
+                }
+            }
+        });
+    </script>
 {% endblock %}

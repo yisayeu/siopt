@@ -36,13 +36,13 @@ class PostController extends FOSRestController
     public function getPostsAction()
     {
         // TODO: implement pagination.
-        // TODO: enable caching
+        // TODO: enable caching.
         // TODO: move this stuff into a separate service.
 
         $posts = $this
             ->getDoctrine()
             ->getRepository(Post::class)->findBy([], ['createdAt' => 'DESC'], 10);
 
-            return $this->handleView($this->view($posts));
+        return $this->handleView($this->view($posts));
     }
 }
