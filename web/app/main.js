@@ -1,10 +1,17 @@
 requirejs.config({
-    baseUrl: 'app'
+    baseUrl: 'app',
+    paths: {
+        backbone: 'vendor/backbone/backbone',
+        underscore: 'vendor/underscore/underscore',
+        jquery: 'vendor/jquery/jquery'
+    }
 });
 
 require([
-    'src/app',
-    'src/config'
-], function (App, config) {
-    App.start(config);
+    'backbone',
+    'src/router'
+], function (Backbone, Router) {
+    var router = new Router();
+
+    Backbone.history.start();
 });

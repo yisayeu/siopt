@@ -41,6 +41,6 @@ class PostController extends FOSRestController
             ->getDoctrine()
             ->getRepository(Post::class)->findBy([], ['createdAt' => 'DESC'], 10);
 
-        return $this->handleView($this->view($posts));
+            return $this->handleView($this->view($posts));
     }
 }

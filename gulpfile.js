@@ -14,6 +14,18 @@ gulp.task('copy', function () {
     // rjs
     gulp.src('bower_components/rjs/dist/r.js')
         .pipe(gulp.dest('.'));
+
+    // backbone
+    gulp.src('bower_components/backbonejs/backbone.js')
+        .pipe(gulp.dest('web/app/vendor/backbone'));
+
+    // underscore
+    gulp.src('bower_components/underscore/underscore.js')
+        .pipe(gulp.dest('web/app/vendor/underscore'));
+
+    // jquery
+    gulp.src('bower_components/jquery/dist/jquery.js')
+        .pipe(gulp.dest('web/app/vendor/jquery'));
 });
 
 gulp.task('rjs', function (cb) {
