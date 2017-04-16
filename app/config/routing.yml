@@ -1,11 +1,10 @@
-blog_frontend:
-    resource: "@BlogFrontendBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 blog:
-    resource: "@BlogBundle/Resources/config/routing.yml"
-    prefix: /blog
+    resource: "@BlogBackendBundle/Resources/config/routing.yml"
+    prefix: /api
+
+blog_frontend:
+    resource: "@BlogFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
 
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"

@@ -1,8 +1,8 @@
 <?php
 
-namespace BlogBundle\Controller;
+namespace Blog\BackendBundle\Controller;
 
-use BlogBundle\Entity\Post;
+use Blog\BackendBundle\Entity\Post;
 use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,6 +37,7 @@ class PostController extends FOSRestController
     {
         // TODO: implement pagination.
         // TODO: enable caching
+        // TODO: move this stuff into a separate service.
 
         $posts = $this
             ->getDoctrine()

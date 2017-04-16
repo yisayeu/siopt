@@ -4,7 +4,7 @@ define([
 
     var Post = Backbone.Model.extend({
         idAttribute: 'id',
-        urlRoot: '/blog/posts'
+        urlRoot: '/api/posts'
     });
 
     return Post;

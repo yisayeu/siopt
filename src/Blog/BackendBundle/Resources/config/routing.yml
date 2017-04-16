@@ -1,4 +1,4 @@
 blog:
-    resource: "@BlogBundle/Controller/"
+    resource: "@BlogBackendBundle/Controller/"
     defaults: {_format: json}
     type: rest

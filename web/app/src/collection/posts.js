@@ -4,7 +4,7 @@ define([
 ], function (Backbone, Post) {
 
     var Posts = Backbone.Collection.extend({
-        url: '/blog/posts',
+        url: '/api/posts',
         model: Post
     });
 

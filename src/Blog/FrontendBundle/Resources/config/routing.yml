@@ -1,0 +1,3 @@
+blog_frontend:
+    resource: "@BlogFrontendBundle/Controller/"
+    type:     annotation
